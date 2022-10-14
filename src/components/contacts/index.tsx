@@ -1,29 +1,24 @@
 import { StyledContacts } from "./styles";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { BsWhatsapp } from "react-icons/bs";
 
 export const Contacts: React.FC = () => {
   const form: any = useRef();
 
   const sendEmail = (e: any) => {
     e.preventDefault();
+    const service_id = String(process.env.SERVICE_ID);
+    const template_id = String(process.env.TEMPLATE_ID);
+    const public_key = String(process.env.PUBLIC_KEY);
 
-    emailjs
-      .sendForm(
-        "service_t5r6hif",
-        "template_hstieyh",
-        form.current,
-        "bi2RSP-aAyiNuPS7R"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(service_id, template_id, form.current, public_key).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
   return (
     <StyledContacts id="4">
