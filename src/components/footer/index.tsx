@@ -28,10 +28,13 @@ export const Footer: React.FC = () => {
               </a>
             </Link>
           </div>
-        </section>
-        <section className="contact">
-          <BsWhatsapp />
-          <span className="contact-number">(92) 9 9527-2722</span>
+          <div className="social-media">
+            <Link href="https://api.whatsapp.com/send?phone=5592995272722">
+              <a>
+                <BsWhatsapp />
+              </a>
+            </Link>
+          </div>
         </section>
       </section>
     </StyledFooter>
