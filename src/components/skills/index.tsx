@@ -77,7 +77,7 @@ export const Skills: React.FC = () => {
 
         <div className="skill">
           <SiNestjs className="skill-icon" />
-          Nest
+          NestJs
         </div>
         <div className="skill">
           <SiFastapi className="skill-icon" />
