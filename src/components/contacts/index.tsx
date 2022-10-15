@@ -1,9 +1,11 @@
 import { StyledContacts } from "./styles";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export const Contacts: React.FC = () => {
   const form: any = useRef();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -13,10 +15,12 @@ export const Contacts: React.FC = () => {
 
     emailjs.sendForm(service_id, template_id, form.current, public_key).then(
       (result) => {
-        console.log(result.text);
+        setIsActive(true);
+        setIsSuccess(true);
       },
       (error) => {
-        console.log(error.text);
+        setIsSuccess(false);
+        setIsActive(true);
       }
     );
   };
@@ -37,6 +41,21 @@ export const Contacts: React.FC = () => {
           </section>
         </form>
       </section>
+      {isActive && (
+        <div className="status-message-content">
+          {isSuccess ? (
+            <div className="status-success">
+              <p>Enviado com sucesso!!!</p>
+              <span onClick={() => setIsActive(false)}>x</span>
+            </div>
+          ) : (
+            <div className="status-error">
+              <p>Erro, Tente novamente mais tarde!!!</p>
+              <span onClick={() => setIsActive(false)}>x</span>
+            </div>
+          )}
+        </div>
+      )}
     </StyledContacts>
   );
 };

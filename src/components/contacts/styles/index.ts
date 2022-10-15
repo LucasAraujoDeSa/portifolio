@@ -68,6 +68,52 @@ export const StyledContacts = styled.section`
     cursor: pointer;
   }
 
+  .status-message-content {
+    width: 30%;
+    padding: 20px;
+    margin-left: 10px;
+  }
+
+  .status-success {
+    background-color: #66db2e;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .status-error {
+    background-color: #db2727;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
   @media (max-width: 768px) {
     .contacts-content {
       width: 90%;
@@ -91,6 +137,10 @@ export const StyledContacts = styled.section`
 
     .form-btn {
       width: 100%;
+    }
+
+    .status-message-content {
+      width: 82%;
     }
   }
 `;
