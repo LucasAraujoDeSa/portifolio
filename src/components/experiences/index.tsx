@@ -10,7 +10,7 @@ export const Experiences: React.FC = () => {
           <span className="xp-card-title">Instituto Sidia</span>
           <p className="xp-desc">
             Estagiário em desenvolvimento de software, onde participei de
-            automações visando agilizar processos internos
+            automações visando agilizar processos internos.
           </p>
         </div>
         <div className="xp-card">
